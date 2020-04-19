@@ -8,12 +8,14 @@ namespace project_euler
         {
             Console.WriteLine("Project Euler:");
 
-            var p1 = new Problem1();
-            p1.Solve();
+            // var p1 = new Problem1();
+            // p1.Solve();
 
-            var p2 = new Problem2();
-            p2.Solve();
+            // var p2 = new Problem2();
+            // p2.Solve();
 
+            var p3 = new Problem3();
+            p3.Solve();
         }
     }
 }
