@@ -1,12 +1,16 @@
 ﻿using System;
-
+using project_euler.Problems;
 namespace project_euler
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Project Euler:");
+
+            var p1 = new Problem1();
+            p1.Solve();
+            
         }
     }
 }
