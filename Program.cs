@@ -10,7 +10,10 @@ namespace project_euler
 
             var p1 = new Problem1();
             p1.Solve();
-            
+
+            var p2 = new Problem2();
+            p2.Solve();
+
         }
     }
 }
