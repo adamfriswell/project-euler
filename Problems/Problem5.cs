@@ -8,7 +8,7 @@ namespace project_euler.Problems {
         public void Solve() {
 
             bool solved = false;
-            long ans = 1;
+            long ans = 2520; //can start here as given in question
 
             while (!solved) {
                 if (ans % 1 == 0 && ans % 2 == 0 && ans % 3 == 0 && ans % 4 == 0 && ans % 5 == 0 &&
@@ -18,7 +18,7 @@ namespace project_euler.Problems {
                         solved = true;
                 }
                 else{
-                    ans++;
+                    ans+=2; //can ignore all odd numbers as not divisible by 2
                 }
             }
 
