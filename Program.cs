@@ -10,6 +10,8 @@ namespace project_euler {
 
             var listHelper = new ListHelper();
             var timeHelper = new TimeHelper();
+            var helper = new PrimeHelper();
+
             bool exit = false;
 
             while (!exit) {
@@ -19,20 +21,15 @@ namespace project_euler {
                 DateTime start = DateTime.Now;
                 List<int> problemsDone = new List<int>() { 1, 2, 5 };
 
-                bool isNumeric = int.TryParse(input, out int n);
+                bool isNumeric = int.TryParse(input, out int problemNumber);
 
-                if (isNumeric && problemsDone.Contains(n)) {
-                    Type problemClassType = Type.GetType("project_euler.Problems.Problem" + n);
-                    object instance = Activator.CreateInstance(problemClassType);
-                    MethodInfo solveMethod = problemClassType.GetMethod("Solve");
-                    solveMethod.Invoke(instance, null);
-
+                if (isNumeric && problemsDone.Contains(problemNumber)) {
+                    InvokeProblemSolveMethod(problemNumber);
                     timeHelper.TimeToSolve(start);
                 } 
                 else {
                     switch (input) {
                         case "pf":
-                            var helper = new PrimeHelper();
                             helper.WritePrimeFactorisation();
                             break;
                         case "e":
@@ -50,6 +47,13 @@ namespace project_euler {
                 }
                 Console.WriteLine("---------------");
             }
+        }
+
+        private static void InvokeProblemSolveMethod(int problemNumber) {
+            Type problemClassType = Type.GetType("project_euler.Problems.Problem" + problemNumber);
+            object instance = Activator.CreateInstance(problemClassType);
+            MethodInfo solveMethod = problemClassType.GetMethod("Solve");
+            solveMethod.Invoke(instance, null);
         }
     }
 }
