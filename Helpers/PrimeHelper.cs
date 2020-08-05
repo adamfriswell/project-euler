@@ -48,19 +48,19 @@ namespace project_euler.Helpers {
             return primeFactorisation;
         }
 
-        public DateTime WritePrimeFactorisation() {
+        public void WritePrimeFactorisation() {
 
             Console.Write("Type any number:  "); 
             long input = Int64.Parse(Console.ReadLine());
 
             DateTime start = DateTime.Now;
-
             var pf = PrimeFactorisation(input);
 
             var listHelper = new ListHelper();
-            string output = "Prime factorisation of " + input + " is: " + listHelper.ListItems(pf);
+            Console.WriteLine("Prime factorisation of " + input + " is: " + listHelper.ListItems(pf));
 
-            return start;
+            var timeHelper = new TimeHelper();
+            timeHelper.TimeToSolve(start);
         }
 
     }

@@ -9,6 +9,7 @@ namespace project_euler {
         static void Main(string[] args) {
 
             var listHelper = new ListHelper();
+            var timeHelper = new TimeHelper();
             bool exit = false;
 
             while (!exit) {
@@ -26,14 +27,13 @@ namespace project_euler {
                     MethodInfo solveMethod = problemClassType.GetMethod("Solve");
                     solveMethod.Invoke(instance, null);
 
-                    TimeToSolve(start);
+                    timeHelper.TimeToSolve(start);
                 } 
                 else {
                     switch (input) {
                         case "pf":
                             var helper = new PrimeHelper();
-                            var pfStart = helper.WritePrimeFactorisation();
-                            TimeToSolve(pfStart);
+                            helper.WritePrimeFactorisation();
                             break;
                         case "e":
                             exit = true;
@@ -50,12 +50,6 @@ namespace project_euler {
                 }
                 Console.WriteLine("---------------");
             }
-        }
-
-        private static void TimeToSolve(DateTime start) {
-            DateTime finish = DateTime.Now;
-            double duration = (finish - start).TotalMilliseconds;
-            Console.WriteLine($"Took {duration.ToString()} milliseconds to solve");
         }
     }
 }
