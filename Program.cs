@@ -25,6 +25,10 @@ namespace project_euler {
                     //     var p3 = new Problem3();
                     //     p3.Solve();
                     //     break;
+                    case "5":
+                        var p5 = new Problem5();
+                        p5.Solve();
+                        break;
                     case "pf":
                         var helper = new Helper();
                         helper.WritePrimeFactorisation();
