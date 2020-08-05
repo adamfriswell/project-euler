@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/adamfriswell/Documents/Coding/VS Code/project-euler/project-euler.csproj",
+      "projectUniqueName": "/Users/adamfriswell/Documents/Coding/repos/project-euler/project-euler.csproj",
       "projectName": "project-euler",
-      "projectPath": "/Users/adamfriswell/Documents/Coding/VS Code/project-euler/project-euler.csproj",
+      "projectPath": "/Users/adamfriswell/Documents/Coding/repos/project-euler/project-euler.csproj",
       "packagesPath": "/Users/adamfriswell/.nuget/packages/",
-      "outputPath": "/Users/adamfriswell/Documents/Coding/VS Code/project-euler/obj/",
+      "outputPath": "/Users/adamfriswell/Documents/Coding/repos/project-euler/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/adamfriswell/.nuget/NuGet/NuGet.Config"
