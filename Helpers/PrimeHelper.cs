@@ -28,10 +28,10 @@ namespace project_euler.Helpers {
             return primeFactors;
         }
 
-        public List<long> PrimeFactorisation(long input) {
-            List<long> primeFactorisation = new List<long>() { };
+        public List<int> PrimeFactorisation(long input) {
+            List<int> primeFactorisation = new List<int>() { };
             double result = input;
-            long count = 2;
+            int count = 2;
             double test = 0;
 
             while (result != 1) {
@@ -57,12 +57,8 @@ namespace project_euler.Helpers {
 
             var pf = PrimeFactorisation(input);
 
-            string output = "Prime factorisation of " + input + " is: ";
-            foreach (var i in pf) {
-                output += i + ", ";
-            }
-
-            Console.WriteLine(output.Substring(0,output.Length - 2));
+            var listHelper = new ListHelper();
+            string output = "Prime factorisation of " + input + " is: " + listHelper.ListItems(pf);
 
             return start;
         }

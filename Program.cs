@@ -8,6 +8,7 @@ namespace project_euler {
     class Program {
         static void Main(string[] args) {
 
+            var listHelper = new ListHelper();
             bool exit = false;
 
             while (!exit) {
@@ -40,7 +41,7 @@ namespace project_euler {
                             break;
                         case "help":
                             Console.WriteLine("Options: Problem <n> = <n>, Prime Factorisation = pf, Exit =e");
-                            Console.WriteLine("Problems Completed: " + GetProblemsDone(problemsDone));
+                            Console.WriteLine("Problems Completed: " + listHelper.ListItems(problemsDone));
                             break;
                         default:
                             Console.WriteLine("Not a valid option, write 'help' to see available options");
@@ -49,14 +50,6 @@ namespace project_euler {
                 }
                 Console.WriteLine("---------------");
             }
-        }
-
-        private static string GetProblemsDone(List<int> problemsDone) {
-            string output = "";
-            foreach (var p in problemsDone) {
-                output += p + ", ";
-            }
-            return output.Substring(0, output.Length - 2);;
         }
 
         private static void TimeToSolve(DateTime start) {
