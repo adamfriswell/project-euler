@@ -12,14 +12,18 @@ namespace project_euler {
                 Console.Write("Menu: ");
                 string input = Console.ReadLine().ToLower();
 
+                DateTime start = DateTime.Now;
+
                 switch (input) {
                     case "1":
                         var p1 = new Problem1();
                         p1.Solve();
+                        TimeToSolve(start);
                         break;
                     case "2":
                         var p2 = new Problem2();
                         p2.Solve();
+                        TimeToSolve(start);
                         break;
                     // case "3":
                     //     var p3 = new Problem3();
@@ -28,10 +32,12 @@ namespace project_euler {
                     case "5":
                         var p5 = new Problem5();
                         p5.Solve();
+                        TimeToSolve(start);
                         break;
                     case "pf":
                         var helper = new Helper();
                         helper.WritePrimeFactorisation();
+                        TimeToSolve(start);
                         break;
                     case "e":
                         exit = true;
@@ -46,6 +52,12 @@ namespace project_euler {
                 }
                 Console.WriteLine("---------------");
             }
+        }
+
+        private static void TimeToSolve(DateTime start) {
+            DateTime finish = DateTime.Now;
+            double duration = (finish - start). TotalMilliseconds;
+            Console.WriteLine($"Took {duration.ToString()} milliseconds to solve");
         }
     }
 }
