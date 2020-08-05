@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using project_euler.Helpers;
 
 namespace project_euler.Problems {
-    public class Problem5 {
+    public class Problem5 : ISolveable {
 
         public void Solve() {
 

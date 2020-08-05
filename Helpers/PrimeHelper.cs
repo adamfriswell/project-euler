@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace project_euler.Helpers {
-    public class Helper {
+    public class PrimeHelper {
 
         public bool IsPrime(long input) {
             for (int i = 2; i < input; i++) {
@@ -48,10 +48,12 @@ namespace project_euler.Helpers {
             return primeFactorisation;
         }
 
-        public void WritePrimeFactorisation() {
+        public DateTime WritePrimeFactorisation() {
 
             Console.Write("Type any number:  "); 
             long input = Int64.Parse(Console.ReadLine());
+
+            DateTime start = DateTime.Now;
 
             var pf = PrimeFactorisation(input);
 
@@ -61,6 +63,8 @@ namespace project_euler.Helpers {
             }
 
             Console.WriteLine(output.Substring(0,output.Length - 2));
+
+            return start;
         }
 
     }

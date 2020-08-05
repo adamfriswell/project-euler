@@ -1,6 +1,6 @@
 using System;
 namespace project_euler.Problems {
-    public class Problem2 {
+    public class Problem2 : ISolveable{
 
         public void Solve() {
 

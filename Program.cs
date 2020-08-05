@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using project_euler.Problems;
 using project_euler.Helpers;
 
@@ -13,50 +15,53 @@ namespace project_euler {
                 string input = Console.ReadLine().ToLower();
 
                 DateTime start = DateTime.Now;
+                List<int> problemsDone = new List<int>() { 1, 2, 5 };
 
-                switch (input) {
-                    case "1":
-                        var p1 = new Problem1();
-                        p1.Solve();
-                        TimeToSolve(start);
-                        break;
-                    case "2":
-                        var p2 = new Problem2();
-                        p2.Solve();
-                        TimeToSolve(start);
-                        break;
-                    // case "3":
-                    //     var p3 = new Problem3();
-                    //     p3.Solve();
-                    //     break;
-                    case "5":
-                        var p5 = new Problem5();
-                        p5.Solve();
-                        TimeToSolve(start);
-                        break;
-                    case "pf":
-                        var helper = new Helper();
-                        helper.WritePrimeFactorisation();
-                        TimeToSolve(start);
-                        break;
-                    case "e":
-                        exit = true;
-                        Console.WriteLine("Exitting");
-                        break;
-                    case "help":
-                        Console.WriteLine("Options: Problem 1 = 1, Problem 2 = 2, Prime Factorisation = pf, Exit =e");
-                        break;
-                    default:
-                        Console.WriteLine("Not a valid option, write 'help' to see available options");
-                        break;
+                bool isNumeric = int.TryParse(input, out int n);
+
+                if (isNumeric && problemsDone.Contains(n)) {
+                    Type problemClassType = Type.GetType("project_euler.Problems.Problem" + n);
+                    object instance = Activator.CreateInstance(problemClassType);
+                    MethodInfo solveMethod = problemClassType.GetMethod("Solve");
+                    solveMethod.Invoke(instance, null);
+
+                    TimeToSolve(start);
+                } 
+                else {
+                    switch (input) {
+                        case "pf":
+                            var helper = new PrimeHelper();
+                            var pfStart = helper.WritePrimeFactorisation();
+                            TimeToSolve(pfStart);
+                            break;
+                        case "e":
+                            exit = true;
+                            Console.WriteLine("Exitting");
+                            break;
+                        case "help":
+                            Console.WriteLine("Options: Problem <n> = <n>, Prime Factorisation = pf, Exit =e");
+                            Console.WriteLine("Problems Completed: " + GetProblemsDone(problemsDone));
+                            break;
+                        default:
+                            Console.WriteLine("Not a valid option, write 'help' to see available options");
+                            break;
+                    }
                 }
                 Console.WriteLine("---------------");
             }
         }
 
+        private static string GetProblemsDone(List<int> problemsDone) {
+            string output = "";
+            foreach (var p in problemsDone) {
+                output += p + ", ";
+            }
+            return output.Substring(0, output.Length - 2);;
+        }
+
         private static void TimeToSolve(DateTime start) {
             DateTime finish = DateTime.Now;
-            double duration = (finish - start). TotalMilliseconds;
+            double duration = (finish - start).TotalMilliseconds;
             Console.WriteLine($"Took {duration.ToString()} milliseconds to solve");
         }
     }
