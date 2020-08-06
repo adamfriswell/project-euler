@@ -21,7 +21,7 @@ What is the largest prime factor of the number 600851475143 ?
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-## Problem 06: 
+## Problem 06: Sum square difference
 The sum of the squares of the first ten natural numbers is, 1^2 + 2^2 + ... + 10^2 = 385
 
 The square of the sum of the first ten natural numbers is, (1 + 2 + ... + 10)^2 = 55^2 = 3025
