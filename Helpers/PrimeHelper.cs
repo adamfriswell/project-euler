@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace project_euler.Helpers {
     public class PrimeHelper {
@@ -28,8 +29,12 @@ namespace project_euler.Helpers {
             return primeFactors;
         }
 
-        public List<int> PrimeFactorisation(long input) {
-            List<int> primeFactorisation = new List<int>() { };
+        public List<long> PrimeFactorsFromFactorisation(long input){
+            return this.PrimeFactorisation(input).Distinct().ToList();
+        }
+
+        public List<long> PrimeFactorisation(long input) {
+            List<long> primeFactorisation = new List<long>() { };
             double result = input;
             int count = 2;
             double test = 0;
