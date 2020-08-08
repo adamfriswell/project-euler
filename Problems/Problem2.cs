@@ -19,7 +19,7 @@ namespace project_euler.Problems {
 
             }
 
-            Console.WriteLine ("Problem 2: " + sum);
+            Console.WriteLine ($"Problem 2: {sum}");
         }
 
     }

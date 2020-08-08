@@ -21,7 +21,7 @@ namespace project_euler.Problems {
                 }
             }
 
-            Console.WriteLine ("Problem 5: " + ans);
+            Console.WriteLine ($"Problem 5: {ans}");
         }
     }
 }

@@ -68,5 +68,21 @@ namespace project_euler.Helpers {
             timeHelper.TimeToSolve (start);
         }
 
+        public List<long> PrimesUpToOrdinal (long input) {
+            long i = 2;
+            List<long> primes = new List<long> () {  };
+            while (primes.Count < input) {
+                if (this.IsPrime (i)) {
+                    primes.Add (i);
+                }
+                i++;
+            }
+            return primes;
+        }
+
+        public long PrimesAtOrdinal (long input) {
+            return this.PrimesUpToOrdinal (input).Last ();
+        }
+
     }
 }

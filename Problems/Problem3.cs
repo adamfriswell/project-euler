@@ -13,7 +13,7 @@ namespace project_euler.Problems {
 
             List<long> primeFactorisation = helper.PrimeFactorisation (input);
 
-            Console.WriteLine ("Problem 3: " + primeFactorisation.Max ());
+            Console.WriteLine ($"Problem 3: {primeFactorisation.Max ()}");
         }
     }
 }

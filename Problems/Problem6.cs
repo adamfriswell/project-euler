@@ -25,7 +25,7 @@ namespace project_euler.Problems {
 
             long difference = squareOfSum - sumOfSquares;
 
-            Console.WriteLine ("Problem 6: " + difference);
+            Console.WriteLine ($"Problem 6: {difference}");
         }
     }
 }
