@@ -1,5 +1,5 @@
 .vscode
-bin\
+bin\Debug\netcoreapp3.1
 obj
 omnisharp.json
 .DS_STORE
