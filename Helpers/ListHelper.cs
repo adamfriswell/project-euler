@@ -8,7 +8,7 @@ namespace project_euler.Helpers {
             foreach (var i in list) {
                 output += i + ", ";
             }
-            return output.Substring (0, output.Length - 2);;
+            return output.Substring (0, output.Length - 2);
         }
     }
 }
