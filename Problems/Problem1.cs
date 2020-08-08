@@ -2,7 +2,7 @@ using System;
 namespace project_euler.Problems {
     public class Problem1 : ISolveable {
 
-        public void Solve() {
+        public void Solve () {
 
             int sum = 0;
 
@@ -12,7 +12,7 @@ namespace project_euler.Problems {
                 }
             }
 
-            Console.WriteLine("Problem 1: " + sum);
+            Console.WriteLine ("Problem 1: " + sum);
         }
 
     }
