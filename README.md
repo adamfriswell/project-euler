@@ -1,5 +1,5 @@
 # project-euler
-My Attempts for the problems at https://projecteuler.net/
+My Attempts for the problems at https://projecteuler.net/. Having graduated with a Mathematics degree this still remains an interest of mine, and so I started to attempt these problems as an outlet to keep up my mathematical thinking. I also wanted to play with algorithms as I haven't done this much and don't really use/need it in my day job as a web developer. I've employed a brute force approach initally with most problems, and will try and refine them later on.
 
 ## Problem 1: Multiples of 3 and 5
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
