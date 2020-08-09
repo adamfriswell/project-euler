@@ -19,7 +19,7 @@ namespace project_euler {
                 string input = Console.ReadLine ().ToLower ();
 
                 DateTime start = DateTime.Now;
-                List<long> problemsDone = new List<long> () { 1, 2, 3, 4, 5, 6, 7, 8};
+                List<long> problemsDone = new List<long> () { 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
                 bool isNumeric = int.TryParse (input, out int problemNumber);
 
