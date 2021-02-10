@@ -5,20 +5,18 @@ namespace project_euler.Problems {
 
         public void Solve () {
 
-            int a, b, c, i, j ,k;
-            a = b = c = i = j = k = 0;
+            int i = 0, j = 0, k = 0;
 
             bool ansFound = false;
+            string result = "Not found";
 
             while (!ansFound) {
                 while (i < 1000) {
                     while (j < 1000) {
                         while (k < 1000) {
-                            if (this.IsPythagoreanTriplet (i, j, k)) {
-                                if (this.SumTo1000 (i, j, k)) {
-                                    a = i;
-                                    b = j;
-                                    c = k;
+                            if (i + j + k == 1000) {
+                                if (this.IsPythagoreanTriplet (i, j, k)) {
+                                    result = $"Problem 9: {i * j * k} = {i}*{j}*{k} [where {i}+{j}+{k}=1000]";
                                     ansFound = true;
                                 }
                             }
@@ -32,26 +30,14 @@ namespace project_euler.Problems {
                 }
             }
 
-            int product = a * b * c;
-
-            Console.WriteLine ($"Problem 9: {product} = {a}*{b}*{c} [where {a}+{b}+{c}=1000]");
-        }
-
-        private bool SumTo1000 (int i, int j, int k) {
-            return i + j + k == 1000 ? true : false;
+            Console.WriteLine (result);
         }
 
         private bool IsPythagoreanTriplet (int i, int j, int k) {
-            if (i < j) {
-                if (j < k) {
-                    return i * i + j * j == k * k ? true : false;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
+            if (i < j && j < k) {
+                return i * i + j * j == k * k;
             }
+            return false;
         }
     }
-
 }
